@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mealie
+    env: docker
+    region: oregon
+    plan: free
+    disk:
+      name: mealie-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: ALLOW_SIGNUP
+        value: "true"
+      - key: TZ
+        value: America/Los_Angeles   # change this to your real timezone if you want (or leave it)
